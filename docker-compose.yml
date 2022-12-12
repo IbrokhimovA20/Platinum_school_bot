@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    restart: always
+    volumes:
+      - .:/jmath_bot
+    privileged: true
+    environment:
+      - ADMINS=${ADMINS}
+      - USERS=${USERS}
+      - BOT_TOKEN=${BOT_TOKEN}
+      - GUBKIN_BOOKS=${GUBKIN_BOOKS}
+      - AMITY_BOOKS=${AMITY_BOOKS}
+      - IUT_BOOKS=${IUT_BOOKS}
+      - WIUT_2015_BOOKS=${WIUT_2015_BOOKS}
+      - WIUT_2018_BOOKS=${WIUT_2018_BOOKS}
+      - WIUT_2019_BOOKS=${WIUT_2019_BOOKS}
+      - WIUT_2020_BOOKS=${WIUT_2020_BOOKS}
+      - WIUT_L_2015_BOOKS=${WIUT_L_2015_BOOKS}
+      - WIUT_L_2018_BOOKS=${WIUT_L_2018_BOOKS}
+      - WIUT_L_2019_BOOKS=${WIUT_L_2019_BOOKS}
+      - WIUT_L_2021_BOOKS=${WIUT_L_2021_BOOKS}
+      - LOGICAL=${LOGICAL}
+      - CAMBRIDGE=${CAMBRIDGE}
+      - SKANAVI=${SKANAVI}
+      - USMONOV=${USMONOV}
+      - SCHOOL_BOOKS=${SCHOOL_BOOKS}
+      - SHARIGINA=${SHARIGINA}
+      - TRENAJOR=${TRENAJOR}
+      - SBORNIK=${SBORNIK}
+      - MEDIC=${MEDIC}
+      - KONS_PARALLELOGRAM=${KONS_PARALLELOGRAM}
