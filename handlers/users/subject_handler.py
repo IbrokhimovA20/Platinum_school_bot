@@ -14,7 +14,7 @@ from loader import bot
 @dp.message_handler(text='Math 🧠')
 async def handle_subject(message: Message):
     users = pd.read_pickle("users.pickle")
-    if len(users[users['id'] == str(message.chat.id)][users['promocode'].notna()]) != 0: 
+    if users[users['student_id'] ==message.from_user.id]['Math'][0]:
         await message.answer('По приведенной ниже ссылке вы можете перейти на бот J.M.ath', reply_markup = jmath_bot_button)
     else:
         await bot.send_message(chat_id = message.chat.id, text = "У вас нет доступа к боту")
@@ -22,8 +22,7 @@ async def handle_subject(message: Message):
 @dp.message_handler(text='Deutsch 🇩🇪')
 async def handle_subject(message: Message):
     users = pd.read_pickle("users.pickle")
-    print(users)
-    if len(users[users['id'] == str(message.chat.id)][users['promocode'].notna()]) != 0:
+    if users[users['student_id'] == message.from_user.id]['German'][0]:
         await message.answer('Выберите что вам нужно: ', reply_markup = germany)
     else:
         await bot.send_message(chat_id = message.chat.id, text = "У вас нет доступа к боту")
@@ -31,7 +30,7 @@ async def handle_subject(message: Message):
 @dp.message_handler(text='日本語 🇯🇵')
 async def handle_subject(message: Message):
     users = pd.read_pickle("users.pickle")
-    if len(users[users['id'] == str(message.chat.id)][users['promocode'].notna()]) != 0:
+    if users[users['student_id'] ==message.from_user.id]['Japan'][0]:
         await message.answer('Выберите что вам нужно: ', reply_markup = japanese)
     else:
         await bot.send_message(chat_id = message.chat.id, text = "У вас нет доступа к боту")
@@ -39,7 +38,7 @@ async def handle_subject(message: Message):
 @dp.message_handler(text='English 🏴󠁧󠁢󠁥󠁮󠁧󠁿')
 async def handle_subject(message: Message):
     users = pd.read_pickle("users.pickle")
-    if len(users[users['id'] == str(message.chat.id)][users['promocode'].notna()]) != 0:
+    if users[users['student_id'] ==message.from_user.id]['English'][0]:
         await message.answer('Выберите что вам нужно: ', reply_markup = england)
     else:
         await bot.send_message(chat_id = message.chat.id, text = "У вас нет доступа к боту")
