@@ -34,6 +34,8 @@ async def bot_start(message: types.Message):
                 await message.delete()
             else:
                 await message.answer(f"Здравствуйте уважаемый {message.from_user.full_name}, добро пожаловать на бот Platinum School! для того чтобы пользоваться ботом подпишитесь на канал Platinum school", reply_markup=follow_inline_button)
+        else:
+            await bot.send_message(chat_id = message.chat.id, text = f"Здравствуйте уважаемый {message.chat.first_name}, Поделитесь своим контактом пожалуйста", reply_markup = take_contact)
     else:
         await bot.send_message(chat_id = message.chat.id, text = f"Здравствуйте уважаемый {message.chat.first_name}, Поделитесь своим контактом пожалуйста", reply_markup = take_contact)
         
